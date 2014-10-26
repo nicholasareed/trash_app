@@ -91,7 +91,11 @@ define(function(require, exports, module) {
                     App.history.navigate('todo/list_as_driver');
                 } else {
                     // normal user
-                    App.history.navigate('todo/list');
+                    if(App.Data.User.get('role') == 'admin'){
+                        App.history.navigate('todo/list_as_admin');
+                    } else {
+                        App.history.navigate('todo/list');
+                    }
                 }
 
             },1000);

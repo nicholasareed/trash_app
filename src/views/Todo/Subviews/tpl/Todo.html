@@ -85,7 +85,7 @@
 
 <!-- Driver/Candidate View -->
 {{#compare Todo.user_id "!=" User._id}}
-	{{#compare Todo.user_id.role "!=" "admin"}}
+	{{#compare User.role "!=" "admin"}}
 
 		{{#compare Todo.status "==" "pending_driver"}}
 			<div>
