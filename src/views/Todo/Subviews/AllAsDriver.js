@@ -461,6 +461,22 @@ define(function(require, exports, module) {
             title: 'Pickup Options',
             text: 'Canceling the pickup now is not nice.',
             buttons: [{
+                text: 'Completed Pickup',
+                success: function(){
+                    // Mark completed
+                    var data = {
+                        status: 'completed'
+                    };
+                    that.collection.remove(Model);
+                    Model.set(data);
+                    Model.save(data,{
+                        patch: true
+                    }).then(function(){
+                        that.collection.fetch();
+                    });
+
+                }
+            },{
                 text: 'Cancel Pickup',
                 success: function(){
                     // Cancel guilt-free (no consequence)

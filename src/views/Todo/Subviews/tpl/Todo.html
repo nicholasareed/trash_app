@@ -84,8 +84,6 @@
 
 
 <!-- Driver/Candidate View -->
-{{print Todo}}
-{{print User}}
 {{#compare Todo.user_id "!=" User._id}}
 	{{#compare Todo.user_id.role "!=" "admin"}}
 
