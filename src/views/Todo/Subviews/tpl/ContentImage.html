@@ -1,0 +1,23 @@
+
+<div class="todocontent-image">
+
+	<!-- image -->
+
+	{{#each media}}
+		<div>
+			{{#if assembled}}
+	    		<img src="{{urls.thumb300x300}}" />
+	    	{{else}}
+	    		<div class="text-center">
+	    			<i class="icon ion-loading-d"></i>
+	    		</div>
+	    	{{/if}}
+		</div>
+	{{/each}}
+
+	<!-- time -->
+	<div>
+		{{format_date created "MMM Do, h:mma"}}
+	</div>
+
+</div>

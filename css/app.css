@@ -1,0 +1,1061 @@
+
+
+.overall-background {
+  /*background: #34495e;*/
+  /*background: url('../img/zwartevilt.png') repeat;*/
+}
+
+
+.status-bar-default {
+  background: #206D9A;
+  opacity: 0.7;
+}
+
+
+
+
+/* Splash Screen */
+
+.splash-background-default {
+  background-color: #FFECB2;
+}
+
+.splash-surface-default {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+
+  line-height: 70px;
+
+  color: #1F2D2D;
+
+
+  text-align: center;
+}
+
+
+
+/* Payment Sources  - credit card list */
+
+.payment-source-list-item-default {
+  line-height: 44px;
+  background: white;
+
+  padding: 0px 8px;
+
+  border-bottom: 1px dashed #ddd;
+}
+
+.payment-source-list-item-default > div:nth-child(1) {
+
+  padding-top: 8px;
+
+  font-size: 28px;
+  line-height: 34px;
+  color: #333;
+}
+
+
+.payment-source-list-item-default > div:nth-child(2) {
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+
+  padding-bottom: 16px;
+}
+
+
+
+
+/* Invoice List - invoices */
+
+.invoice-list-item-default {
+  line-height: 44px;
+  background: white;
+
+  padding: 0px 8px;
+}
+
+.invoice-list-item-default > div:nth-child(1) {
+
+  padding-top: 8px;
+
+  font-size: 28px;
+  line-height: 32px;
+  color: #333;
+}
+
+
+.invoice-list-item-default > div:nth-child(2) {
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+
+  padding-bottom: 16px;
+}
+
+.invoice-list-item-default .other-party {
+  color: #222;
+}
+
+.invoice-list-item-default .other-party.draft {
+  color: #888;
+}
+
+
+.invoice-toggle {
+  margin-top: 16px;
+  margin-left: 10px;
+  border: 1px solid #ddd;
+}
+
+.invoice-toggle.toggle-on {
+
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  line-height: 40px;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  /*background: red;*/
+  background: #fefefe;
+}
+.invoice-toggle.toggle-on:before {
+  content: "\f353";
+}
+
+.header-with-money-sign {
+  display: inline-block; 
+  font-family: "Ionicons"; 
+  speak: none; 
+  font-style: normal; 
+  font-weight: normal; 
+  font-variant: normal; 
+  text-transform: none; 
+  text-rendering: auto; 
+  line-height: 1; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
+
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  line-height: 60px;
+}
+.header-with-money-sign:before {
+  content: "\f353";
+}
+.header-with-money-sign.white-money {
+  color: white;
+}
+
+.invoice-toggle.toggle-off {
+  background: none;
+}
+
+
+/* Invoice item View */
+
+.invoice-view-title-default {
+  border-top: 1px solid #ddd;
+
+  line-height: 30px;
+  font-size: 24px;
+  padding: 8px 10px;
+}
+
+.invoice-view-cost-default {
+  line-height: 30px;
+  font-size: 20px;
+  padding: 8px;
+}
+
+.invoice-view-cost-default > div {
+  display: inline-block;
+  padding: 2px 8px;
+  /*border: 1px solid #444;*/
+
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.invoice-view-cost-default > div span {
+  border: 1px solid #444;
+
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+
+.invoice-view-invoicecontent-add-button-default {
+  padding: 8px;
+  background: rgba(255,255,255,0.5);
+  border-top: 1px solid #eee;
+}
+
+.invoice-view-invoicecontent-add-button-default div {
+  display: inline-block;
+  width: 100%;
+
+  background: #1D7BB4;
+  text-align: center;
+
+  line-height: 40px;
+  font-size: 14px;
+
+  color: white;
+
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+
+}
+
+
+.invoice-view-to-default {
+  padding: 8px;
+}
+
+.invoice-view-to-default.notassigned {
+  color: #888;
+}
+
+.invoice-view-to-default.assigned {
+  font-weight: bold;
+}
+
+
+.invoice-view-from-default {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.invoice-view-from-default.no_owner {
+  color: #888;
+}
+
+.invoice-view-from-default.has_owner {
+  font-weight: bold;
+}
+
+
+
+
+
+/* Top Tabs Connect Friends */
+
+.top-tabs-scroller-item-default {
+  color: #444;
+  line-height: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.top-tabs-scroller-item-default > div {
+  display: inline-block;
+  padding: 4px 14px;
+
+  line-height: 20px;
+}
+.top-tabs-scroller-item-default.selected > div {
+  background: #444;
+  color: white;
+}
+
+
+
+/* Friend List */
+
+.friend-list-tabbar-default {
+  /*border-top: 2px solid #444;*/
+  border-bottom: 1px solid #ddd;
+  /*background: white;*/
+  background: rgba(255,255,255,0.5);
+  text-align: center;
+  line-height: 15px;
+  font-size: 12px;
+  color: #444;
+
+  text-transform: uppercase;
+}
+.friend-list-tabbar-default.on {
+  color: #339bcb;
+}
+.friend-list-tabbar-default i {
+  font-size: 32px;
+  line-height: 50px;
+}
+
+.friend-list-tabbar-default div {
+  font-size: 12px;
+}
+
+
+
+/* Select Friend(s) */
+  
+.select-friends-list-item-default {
+  line-height: 44px;
+  background: white;
+
+  padding: 0px 8px;
+
+  border-bottom: 1px dashed #ddd;
+}
+
+.select-friends-list-item-default > div:nth-child(1) {
+
+  padding-top: 8px;
+
+  font-size: 28px;
+  line-height: 34px;
+  color: #333;
+}
+
+
+.select-friends-list-item-default > div:nth-child(2) {
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+
+  padding-bottom: 16px;
+}
+
+
+
+/* Todo List */
+
+  
+.todo-list-item-default {
+  line-height: 44px;
+  background: white;
+
+  padding: 0px 8px;
+}
+
+.todo-list-item-default > div:nth-child(1) {
+
+  padding-top: 8px;
+
+  font-size: 28px;
+  line-height: 32px;
+  color: #333;
+}
+
+
+.todo-list-item-default > div:nth-child(2) {
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+
+  padding-bottom: 16px;
+}
+
+.todo-list-item-default > div:nth-child(2) span.assigned {
+  padding-right: 8px;
+  color: #2C3E50;
+}
+
+.todo-list-item-default > div:nth-child(2) span.invoiced {
+  /*padding-right: 8px;*/
+  color: green;
+}
+
+.todo-list-item-default > div:nth-child(2) span.owner {
+  color: #7F8C8D;
+}
+
+
+.todo-toggle {
+  margin-top: 16px;
+  margin-left: 10px;
+  border: 1px solid #ddd;
+}
+
+.todo-toggle.toggle-on {
+
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  line-height: 40px;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  /*background: red;*/
+  background: #fefefe;
+}
+.todo-toggle.toggle-on:before {
+  content: "\f2d5";
+}
+
+.todo-toggle.toggle-off {
+  background: none;
+}
+
+
+
+/* Todo item View */
+
+.todo-view-title-default {
+  border-top: 1px solid #ddd;
+
+  font-family: Helvetica, sans-serif;
+
+  line-height: 30px;
+  font-size: 24px;
+  padding: 8px 10px;
+}
+
+.todo-view-tags-default {
+  /*background: blue;*/
+
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-view-tags-default > div {
+  padding: 8px;
+}
+
+.todo-view-tags-default span.label {
+  display: inline-block;
+  padding: 2px 4px;
+  background: red;
+
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.todo-view-todocontent-add-button-default {
+  padding: 8px;
+  background: rgba(255,255,255,0.8);
+  border-top: 1px solid #eee;
+}
+
+.todo-view-todocontent-add-button-default div {
+  display: inline-block;
+  width: 100%;
+
+  background: #1D7BB4;
+  text-align: center;
+
+  line-height: 40px;
+  font-size: 14px;
+
+  color: white;
+
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  
+}
+
+
+.todo-view-assigned-default {
+  padding: 8px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.todo-view-assigned-default.notassigned {
+  color: #888;
+}
+
+.todo-view-assigned-default.assigned {
+  font-weight: bold;
+}
+
+
+.todo-view-owner-default {
+  padding: 8px;
+
+  font-size: 18px;
+  line-height: 24px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-view-owner-default.no_owner {
+  color: #888;
+}
+
+.todo-view-owner-default.has_owner {
+  font-weight: bold;
+}
+
+
+
+/* TodoContent */
+
+.todocontent-image {
+}
+
+.todocontent-image img {
+  width: 100%;
+}
+
+/* List (todo/invoice) Content - TodoContent InvoiceContent */
+
+.list-content-item-default {
+  padding: 8px;
+}
+
+.list-content-item-default > div {
+  padding: 8px;
+  border: 1px solid #999;
+}
+
+.list-content-item-default > div.system-notify {
+  background: #fefefe;
+}
+
+.list-content-item-default > div.mark-complete {
+  background: rgba(46,204,113,0.2);
+}
+
+.list-content-item-default > div.mark-incomplete {
+  background: rgba(231,76,60,0.2);
+}
+
+.list-content-item-default > div.mark-paid {
+  background: rgba(46,204,113,0.2);
+}
+.list-content-item-default > div.mark-paid-by-card {
+  background: rgba(46,204,113,0.2);
+}
+
+.list-content-item-default > div.mark-unpaid {
+  background: rgba(231,76,60,0.2);
+}
+
+
+.list-content-item-default > div > div:nth-child(1) {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.list-content-item-default > div > div:nth-child(2) {
+  color: #888;
+
+  font-size: 11px;
+  line-height: 13px;
+}
+
+
+
+
+
+
+
+/* Approve / Deny buttons */
+
+.approve-deny-option-button-default {
+  padding: 0px 8px;
+}
+
+.approve-deny-option-button-default div {
+
+  font-weight: bold;
+  color: white;
+
+  line-height: 60px;
+  text-align: center;
+  font-size: 24px;
+
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+.approve-deny-option-button-grayout-default {
+  background: blue;
+}
+
+.approve-option-button-default div {
+  background: #2ECC71;
+
+}
+
+.deny-option-button-default div {
+    
+  background: #E67E22;
+
+}
+
+
+
+
+
+/* Todo Filter Tabs Items */
+
+.todo-filter-tabs-bg-default {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  background: rgba(255,255,255,0.5);
+  border-top: 1px solid #1f2d2d;
+  border-bottom: 1px solid #1f2d2d;
+}
+
+.todo-filter-tabs-item-default {
+  line-height: 40px;
+  text-align: left;
+  padding-left: 8px;
+}
+
+.todo-filter-tabs-item-default.selected {
+  background: #1f2d2d;
+  color: white;
+}
+
+
+/* Todo Filter Tabs Items */
+
+.invoice-filter-tabs-bg-default {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  
+  background: rgba(255,255,255,0.5);
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.invoice-filter-tabs-item-default {
+  line-height: 40px;
+  text-align: left;
+  padding-left: 8px;
+}
+
+.invoice-filter-tabs-item-default.selected {
+  /*background: #1f2d2d;*/
+  background: #000;
+  color: white;
+}
+
+
+
+
+/* Payment Source modal/select */
+.modal-option-list-default.card-line-default {
+  padding: 10px 8px;
+}
+
+.modal-option-list-default.card-line-default > div:nth-child(1) {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.modal-option-list-default.card-line-default > div:nth-child(2) {
+  font-size: 12px;
+  line-height: 20px;
+} 
+
+
+
+
+/* View User */
+
+.view-user-bio-default {
+  padding: 14px;
+}
+
+.view-user-bio-default > div {
+  padding: 8px;
+  border: 1px solid #eee;
+  background: #fefefe;
+}
+
+.view-user-background-check-default {
+  line-height: 80px;
+  text-align: center;
+
+  font-size: 24px;
+}
+
+
+
+
+/* Profile */
+
+
+
+/* Searching Usernames / Users */
+
+.user-search-list-item-default {
+  line-height: 44px;
+  background: white;
+
+  padding: 0px 8px;
+
+  border-bottom: 1px dashed #ddd;
+}
+
+.user-search-list-item-default > div:nth-child(1) {
+  font-size: 18px;
+  line-height: 20px;
+  color: #333;
+
+  padding-top: 10px;
+}
+
+.user-search-list-item-default > div:nth-child(2) {
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
+
+/* News / Actions */
+
+.news-surface-temp {
+
+}
+
+.news-surface-temp > div {
+  font-size: 28px;
+  color: #888;
+}
+
+/* Actions Tabbar */
+
+.actions-news-tabbar-default {
+  /*border-top: 2px solid #444;*/
+  border-bottom: 1px solid #ddd;
+  background: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #182030;
+
+  text-transform: uppercase;
+}
+.actions-news-tabbar-default.on {
+  color: #339bcb;
+}
+
+/* action items */
+
+.action-news-item-default {
+  line-height: 20px;
+  padding: 10px;
+  border-bottom: 1px dashed #ddd;
+}
+
+.action-news-item-default span.type {
+  opacity: 0.7;
+}
+
+.action-news-item-default span[data-replace-model="Player"] {
+  font-weight: bold;
+  color: #182030;
+}
+
+.action-news-item-default span[data-replace-model="Sport"] {
+  font-weight: bold;
+  color: #900CE8;
+}
+
+.action-news-item-default span.datetime {
+  color: #888;
+}
+
+
+
+/* Landing Page */
+
+.landing-page-bg-default {
+  background: url('../img/landingbg.png') no-repeat;
+  /*background: url('https://dl.dropboxusercontent.com/u/6673634/landingWelcome4%402x.png') no-repeat;*/
+  background-size: cover;
+}
+
+.landing-page-logo-tagline {
+  text-align: center;
+}
+
+.landing-page-logo-tagline > div:nth-child(1) {
+  font-size: 72px;
+  line-height: 80px;
+}
+
+.landing-page-logo-tagline > div:nth-child(2) {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.landing-title-bg-gradient {
+
+  background: rgb(212,161,118); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(212,161,118,1) 0%, rgba(255,236,178,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(212,161,118,1)), color-stop(100%,rgba(255,236,178,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(212,161,118,1) 0%,rgba(255,236,178,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(212,161,118,1) 0%,rgba(255,236,178,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(212,161,118,1) 0%,rgba(255,236,178,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(212,161,118,1) 0%,rgba(255,236,178,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4a176', endColorstr='#ffecb2',GradientType=0 ); /* IE6-9 */
+
+  /*
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(36%,rgba(255,255,255,1)), color-stop(44%,rgba(255,255,255,0.92)), color-stop(100%,rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 36%,rgba(255,255,255,0.92) 44%,rgba(255,255,255,0) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 36%,rgba(255,255,255,0.92) 44%,rgba(255,255,255,0) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 36%,rgba(255,255,255,0.92) 44%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 36%,rgba(255,255,255,0.92) 44%,rgba(255,255,255,0) 100%);
+  */
+}
+
+.landing-signup-button {
+  color: white;
+  padding: 8px 8px;
+  text-align: center;
+}
+
+.landing-signup-button > div {
+  display: inline-block;
+  /*background: #182030;*/
+  background: #307A87;
+  padding: 14px 8px;
+  width: 80%;
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+
+}
+
+.landing-login-button {
+  text-align: center;
+  padding: 16px 8px 8px 8px;
+  /*color: white;*/
+  color: #1F2D2D;
+}
+
+.landing-login-button span {
+  font-weight: bold;
+}
+
+.header-landing-page-text {
+  color: #1F2D2D;
+  text-align: left;
+  line-height: 60px;
+
+  white-space: nowrap;
+  /*overflow: hidden;*/
+
+}
+
+
+/* login */
+
+.login-page-welcome-top-default { /* > div:nth-child(3){*/
+  font-weight: bold;
+  font-size: 58px;
+  line-height: 60px;
+  /*font-family: 'Kaushan Script', cursive;*/
+  text-align: center;
+}
+
+.login-forgot-pass-button {
+  color: #444;
+  line-height: 60px;
+  text-align: center;
+}
+
+
+
+/* welcome ! */
+
+.welcome-page-default {
+  /*background: white;*/
+  text-align: center;
+  color: #333;
+}
+
+.welcome-page-default > div:nth-child(1){
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.welcome-page-default > div:nth-child(2){
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.welcome-page-default > div:nth-child(3){
+  /*font-weight: bold;*/
+  font-size: 72px;
+  line-height: 80px;
+  /*font-family: 'Kaushan Script', cursive;*/
+}
+
+.welcome-page-default > div:nth-child(4) {
+  font-size: 26px;
+  line-height: 50px;
+}
+
+.welcome-page-username-default {
+  text-align: center;
+  color: #333;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+/* Inbox */
+
+.inbox-tabbar-default {
+  /*border-top: 2px solid #444;*/
+  border-bottom: 1px solid #ddd;
+  background: white;
+  text-align: center;
+  line-height: 15px;
+  font-size: 12px;
+  color: #444;
+
+  text-transform: uppercase;
+}
+.inbox-tabbar-default.on {
+  color: #339bcb;
+}
+.inbox-tabbar-default i {
+  font-size: 32px;
+}
+
+.inbox-tabbar-default div {
+  font-size: 12px;
+}
+
+
+
+/* Messages */
+
+.msg-form-bg-surface {
+  border-top: 1px solid #dcdcdc;
+  background: #f8f8f8;
+}
+
+.message-byuser-container-default {
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.message-byuser-container-default > div {
+  padding: 0 8px;
+}
+
+.message-byuser-container-default > div:first-child {
+  padding-top: 12px;
+}
+.message-byuser-container-default > div:last-child {
+  padding-bottom: 12px;
+}
+
+.message-byuser-container-default > div:nth-child(1) {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+}
+.message-byuser-container-default > div:nth-child(2) {
+  font-size: 12px;
+  color: #999;
+}
+
+.message-text-default {
+  text-align: right;
+  padding: 4px 8px;
+}
+.message-text-default.from_me {
+  text-align: left;
+}
+
+.message-text-default > div {
+
+  display: inline-block;
+  width: 90%;
+
+  color: white;
+  background: #206D9A;
+
+  border: 1px solid #eee;
+
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+
+}
+
+.message-text-default.from_me > div {
+  background: #9A191C;
+}
+
+.message-text-default > div > div:nth-child(1) {
+  font-size: 11px;
+  line-height: 14px;
+  padding: 4px 4px 0;
+}
+
+.message-text-default > div > div:nth-child(2) {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0 4px 4px;
+}
+
+
+/* Message form */
+
+input[type="text"].msg-textinput-smaller {
+  line-height: 50px;
+  border: 1px solid #ddd;
+  border: 0px;
+}
+
+input[type="submit"].msg-button-smaller {
+  line-height: 50px;
+}
+
+
+/* Settings */
+
+.settings-list-item {
+  /*color: white;*/
+  line-height: 32px;
+  font-size: 24px;
+  padding: 20px 8px 8px 8px;
+  /*border-bottom: 1px solid #ddd;*/
+  /*background-color: white;*/
+  /*background: rgba(255,255,255,0.2);*/
+}
+
+.settings-list-item i {
+  padding: 0 0 0 8px;
+  display: inline-block;
+  width: 24px;
+}
+
+.settings-list-item > div:last-child {
+  font-size: 14px;
+}
+.settings-list-item > div:first-child {
+  font-size: 18px;
+}
+
+
+
+

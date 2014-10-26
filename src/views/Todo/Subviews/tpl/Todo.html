@@ -1,0 +1,226 @@
+
+
+<!-- Customer View -->
+{{#compare Todo.user_id._id "==" User._id}}
+
+	{{#compare Todo.status "==" "submitted"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Pending Quote
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Usually done within 15 minutes
+	        </span>
+	    </div>
+	{{/compare}}
+
+	{{#compare Todo.status "==" "quoted"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Pickup Quote: ${{Numeral Todo.quote_cost "0,0.00"}}
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Tap to Accept/Reject
+	        </span>
+	    </div>
+	{{/compare}}
+
+	{{#compare Todo.status "==" "pending_driver"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Accepted!
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Pickup scheduled for today
+	        </span>
+	    </div>
+	{{/compare}}
+	{{#compare Todo.status "==" "pending_complete"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Pickup Scheduled
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Pickup scheduled for today
+	        </span>
+	    </div>
+	{{/compare}}
+
+	{{#compare Todo.status "==" "complete"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Pickup Complete
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Trash has been picked up!
+	        </span>
+	    </div>
+	{{/compare}}
+
+	{{#compare Todo.status "==" "canceled"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Pickup Canceled
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Tap for Details
+	        </span>
+	    </div>
+	{{/compare}}
+
+{{/compare}}
+
+
+<!-- Driver/Candidate View -->
+{{#compare Todo.user_id._id "!=" User._id}}
+	{{#compare Todo.user_id.role "!=" "admin"}}
+
+		{{#compare Todo.status "==" "pending_driver"}}
+			<div>
+			    <span class="ellipsis-all">
+			    	Open Pickup
+			    </span>
+			</div>
+			<div>
+		        <span class="assigned">
+		        	${{Numeral Todo.quote_cost "0,0.00"}}
+		        </span>
+		    </div>
+		{{/compare}}
+		{{#compare Todo.status "==" "pending_complete"}}
+			<div>
+			    <span class="ellipsis-all">
+			    	Picked Scheduled
+			    </span>
+			</div>
+			<div>
+		        <span class="assigned">
+		        	Required to complete today
+		        </span>
+		    </div>
+		{{/compare}}
+
+		{{#compare Todo.status "==" "complete"}}
+			<div>
+			    <span class="ellipsis-all">
+			    	Pickup Complete
+			    </span>
+			</div>
+			<div>
+		        <span class="assigned">
+		        	Trash has been picked up!
+		        </span>
+		    </div>
+		{{/compare}}
+
+		{{#compare Todo.status "==" "canceled"}}
+			<div>
+			    <span class="ellipsis-all">
+			    	Pickup Canceled
+			    </span>
+			</div>
+			<div>
+		        <span class="assigned">
+		        	Tap for Details
+		        </span>
+		    </div>
+		{{/compare}}
+
+	{{/compare}}
+
+{{/compare}}
+
+
+<!-- Admin View -->
+{{#compare Todo.user_id.role "==" "admin"}}
+
+	{{#compare Todo.status "==" "submitted"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Pending Quote
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Complete Now!
+	        </span>
+	    </div>
+	{{/compare}}
+
+	{{#compare Todo.status "==" "quoted"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Pickup Quote: ${{Numeral Todo.quote_cost "0,0.00"}}
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Waiting for Accept/Reject
+	        </span>
+	    </div>
+	{{/compare}}
+
+	{{#compare Todo.status "==" "pending_driver"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Pending Driver
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Sent to 4 drivers
+	        </span>
+	    </div>
+	{{/compare}}
+	{{#compare Todo.status "==" "pending_complete"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Pending Completion
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Driver: Zane Reed
+	        </span>
+	    </div>
+	{{/compare}}
+
+	{{#compare Todo.status "==" "complete"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	${{Numeral Todo.quote_cost "0,0.00"}} Pickup Complete
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Driver: Zane Reed
+	        </span>
+	    </div>
+	{{/compare}}
+
+	{{#compare Todo.status "==" "canceled"}}
+		<div>
+		    <span class="ellipsis-all">
+		    	Pickup Canceled
+		    </span>
+		</div>
+		<div>
+	        <span class="assigned">
+	        	Tap for Details
+	        </span>
+	    </div>
+	{{/compare}}
+
+{{/compare}}
