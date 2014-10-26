@@ -238,6 +238,20 @@ define(function(require, exports, module) {
         this.headerContent.FilterSwitcher.Lightbox.show(this.headerContent.ShowTodo);
 
 
+        // settings
+        this.headerContent.Settings = new Surface({
+            content: '<i class="icon ion-gear-a"></i>',
+            size: [60, undefined],
+            classes: ['header-tab-icon-text-big']
+        });
+        this.headerContent.Settings.on('longtap', function(){
+            Utils.Help('User/View/Settings');
+        });
+        this.headerContent.Settings.on('click', function(){
+            App.history.navigate('settings');
+        });
+        
+
         // create the header
         this.header = new StandardHeader({
             content: "Trash Pickup",
@@ -248,6 +262,7 @@ define(function(require, exports, module) {
             // moreClasses: ["normal-header"],
             moreSurfaces: [
                 // this.headerContent.Invoices,
+                this.headerContent.Settings,
                 // this.headerContent.Create,
                 // this.headerContent.FilterSwitcher,
             ]

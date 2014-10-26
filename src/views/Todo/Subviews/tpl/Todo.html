@@ -1,7 +1,7 @@
 
 
 <!-- Customer View -->
-{{#compare Todo.user_id._id "==" User._id}}
+{{#compare Todo.user_id "==" User._id}}
 
 	{{#compare Todo.status "==" "submitted"}}
 		<div>
@@ -84,7 +84,7 @@
 
 
 <!-- Driver/Candidate View -->
-{{#compare Todo.user_id._id "!=" User._id}}
+{{#compare Todo.user_id "!=" User._id}}
 	{{#compare Todo.user_id.role "!=" "admin"}}
 
 		{{#compare Todo.status "==" "pending_driver"}}

@@ -404,7 +404,7 @@ define(function(require, exports, module) {
 
     SubView.prototype.buttonPushed_submitted = function(Model){
         var that = this;
-        
+
         // cancel
 
         Utils.Popover.Buttons({
@@ -416,6 +416,7 @@ define(function(require, exports, module) {
                     var data = {
                         status: 'canceled'
                     };
+                    that.collection.remove(Model);
                     Model.set(data);
                     Model.save(data,{
                         patch: true
@@ -458,6 +459,9 @@ define(function(require, exports, module) {
                     var data = {
                         status: 'canceled'
                     };
+
+                    that.collection.remove(Model.get('_id'));
+
                     Model.set(data);
                     Model.save(data,{
                         patch: true
@@ -488,6 +492,7 @@ define(function(require, exports, module) {
                     var data = {
                         status: 'canceled'
                     };
+                    that.collection.remove(Model);
                     Model.set(data);
                     Model.save(data,{
                         patch: true
@@ -518,6 +523,7 @@ define(function(require, exports, module) {
                     var data = {
                         status: 'canceled'
                     };
+                    that.collection.remove(Model);
                     Model.set(data);
                     Model.save(data,{
                         patch: true

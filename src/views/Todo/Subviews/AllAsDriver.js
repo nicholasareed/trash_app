@@ -438,7 +438,6 @@ define(function(require, exports, module) {
                     })
                     .fail(function(response){
                         console.log(response);
-                        debugger;
                     })
                     .then(function(){
                         Utils.Popover.Alert('You got this pickup!','Awesome');
@@ -468,6 +467,7 @@ define(function(require, exports, module) {
                     var data = {
                         status: 'canceled'
                     };
+                    that.collection.remove(Model);
                     Model.set(data);
                     Model.save(data,{
                         patch: true
@@ -489,7 +489,7 @@ define(function(require, exports, module) {
 
         Utils.Popover.Buttons({
             title: 'Pickup Options',
-            text: 'Canceling the pickup now will refund 70% of your charge',
+            // text: 'Canceling the pickup now will refund 70% of your charge',
             buttons: [{
                 text: 'Leave Feedback',
                 success: function(){
