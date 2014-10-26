@@ -160,7 +160,7 @@ define(function(require, exports, module) {
             classes: ['landing-title-bg-gradient']
         });
         this.landingTitle.Surface = new Surface({
-            content: '<div>Trashe</div><div>One man\'s trash is<br/>another man\'s treasure</div>',
+            content: '<div>Oscar</div><div>One\'s trash is<br/>another\'s treasure</div>',
             size: [undefined, 200],
             classes: ['landing-page-logo-tagline']
         });
