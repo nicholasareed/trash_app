@@ -168,11 +168,11 @@ define(function(require, exports, module) {
                 href: 'payment_source/list'
             },
 
-            // {
-            //     title: 'Push Notifications',
-            //     desc: 'Finer control',
-            //     href: 'settings/push'
-            // },
+            {
+                title: 'Push Notifications',
+                desc: 'Finer control',
+                href: 'settings/push'
+            },
 
             {
                 title: 'Feedback ('+App.ConfigImportant.Version+')',

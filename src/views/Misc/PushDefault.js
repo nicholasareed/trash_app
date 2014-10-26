@@ -166,101 +166,47 @@ define(function(require, exports, module) {
         var that = this;
 
         var listOptions = [
-        
             {
                 type: 'spacer',
-            },
-            
-            {
-                type: 'header',
-                text: 'Connections'
-            },
-
-            {
-                title: 'New Connection',
-                desc: 'Every time you make a connection',
-                scheme_key: 'new_connection'
-            },
-
-            {
-                type: 'spacer',
-            },
-
-            {
-                type: 'header',
-                text: 'Jobs',
-            },
-
-            {
-                title: 'Updated',
-                desc: 'Some setting updated',
-                scheme_key: 'todo_updated'
-            },
-            {
-                title: 'Involving Me',
-                desc: 'Assigned, marked as employer, etc.',
-                scheme_key: 'todo_assigned'
-            },
-            {
-                title: 'New Content',
-                desc: 'When new messages or other content is included',
-                scheme_key: 'todo_content_added'
-            },
-
-            {
-                type: 'spacer',
-            },
-
-            {
-                type: 'header',
-                text: 'Invoices',
-            },
-
-            {
-                title: 'Item Added',
-                desc: 'Job or custom items',
-                scheme_key: 'invoice_item_added'
-            },
-            {
-                title: 'Updated',
-                desc: 'Some setting updated',
-                scheme_key: 'invoice_updated'
-            },
-            {
-                title: 'Involving Me',
-                desc: 'Payee, recipient, etc.',
-                scheme_key: 'invoice_assigned'
-            },
-            {
-                title: 'New Content',
-                desc: 'When new messages or other content is included',
-                scheme_key: 'invoice_content_added'
-            },
-
-
-            {
-                type: 'spacer',
-            },
-            
-            {
-                type: 'header',
-                text: 'Messages',
-            },
-
-            {
-                title: 'From Connection',
-                desc: 'Already connected',
-                scheme_key: 'new_message_connected'
-            },
-
-            {
-                title: 'From non-Connection',
-                desc: 'You were recommended by someone',
-                scheme_key: 'new_message_unconnected'
-            },
-
-
+            }
         ];
+            
+            // {
+            //     type: 'header',
+            //     text: 'Connections'
+            // },
+
+        // admin
+        if(App.Data.User.get('role') == 'admin'){
+            listOptions.push({
+                title: 'New Submission',
+                desc: 'Every time a submission is made',
+                scheme_key: 'new_submission'
+            });
+            listOptions.push({
+                title: 'Pickup Canceled',
+                desc: 'Every time a pickup is canceled',
+                scheme_key: 'new_canceled'
+            });
+        }
+
+        // driver
+        if(App.Data.User.get('picker') == true){
+            listOptions.push({
+                title: 'New Candidate',
+                desc: 'Every time a candidate pickup is available in your area',
+                scheme_key: 'new_candidate'
+            });
+        }
+
+        // customer
+        if(App.Data.User.get('role') == 'normal' && App.Data.User.get('picker') != true){
+            listOptions.push({
+                title: 'New Quote',
+                desc: 'Every time you receive a new quote',
+                scheme_key: 'new_quote'
+            });
+        }
 
         this.model_views = [];
 
