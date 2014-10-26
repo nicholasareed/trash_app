@@ -54,7 +54,7 @@
 	    </div>
 	{{/compare}}
 
-	{{#compare Todo.status "==" "complete"}}
+	{{#compare Todo.status "==" "completed"}}
 		<div>
 		    <span class="ellipsis-all">
 		    	Pickup Complete
@@ -102,7 +102,7 @@
 		{{#compare Todo.status "==" "pending_complete"}}
 			<div>
 			    <span class="ellipsis-all">
-			    	Picked Scheduled
+			    	Pickup Scheduled
 			    </span>
 			</div>
 			<div>
@@ -112,7 +112,7 @@
 		    </div>
 		{{/compare}}
 
-		{{#compare Todo.status "==" "complete"}}
+		{{#compare Todo.status "==" "completed"}}
 			<div>
 			    <span class="ellipsis-all">
 			    	Pickup Complete
@@ -197,7 +197,7 @@
 	    </div>
 	{{/compare}}
 
-	{{#compare Todo.status "==" "complete"}}
+	{{#compare Todo.status "==" "completed"}}
 		<div>
 		    <span class="ellipsis-all">
 		    	${{Numeral Todo.quote_cost "0,0.00"}} Pickup Complete
