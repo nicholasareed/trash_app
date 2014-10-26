@@ -278,7 +278,7 @@ define(function(require, exports, module) {
                     // },
 
                     '$and' : [{
-                        status: { '$ne' : 'complete'}
+                        status: { '$ne' : 'completed'}
                     },{
                         status: { '$ne' : 'canceled'}
                     }],
@@ -320,11 +320,11 @@ define(function(require, exports, module) {
             //     };
             //     break;
 
-            case 'complete':
+            case 'completed':
                 empty_string = 'No completed pickups';
                 filter = {
                     // tags: 'complete'
-                    status: 'complete'
+                    status: 'completed'
                 };
                 break;
         }
@@ -454,13 +454,13 @@ define(function(require, exports, module) {
 
         // Completed
         this.filterTabs.CompleteTodos = new Surface({
-            content: 'Complete',
+            content: 'Completed',
             size: [undefined, undefined],
             classes: ['todo-filter-tabs-item-default']
         });
         this.filterTabs.CompleteTodos.group = 'Todos';
         this.filterTabs.CompleteTodos.on('click', function(){
-            that.tabs.todos = 'complete';
+            that.tabs.todos = 'completed';
             that.tab_change();
             that.filterTabs.Views.forEach(function(tmpView){
                 if(tmpView.group == 'Todos'){

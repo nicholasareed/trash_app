@@ -321,7 +321,7 @@ define(function(require, exports, module) {
             case 'complete':
                 empty_string = 'None completed';
                 filter = {
-                    status: 'complete'
+                    status: 'completed'
                 };
                 break;
         }
@@ -669,7 +669,7 @@ define(function(require, exports, module) {
             empty_string: 'Add Todos by tapping the <i class="icon ion-ios7-plus-outline"></i>',
             filter: {
                 tags: {
-                    '$ne' : 'complete'
+                    '$ne' : 'completed'
                 }
             }
         });
@@ -681,7 +681,7 @@ define(function(require, exports, module) {
         this.ListContent.CompleteTodos = new AllView({
             empty_string: "None Completed",
             filter: {
-                tags: 'complete'
+                tags: 'completed'
             }
         });
         // this.ListContent.CompleteTodos.View = new View();

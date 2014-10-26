@@ -305,7 +305,7 @@ define(function(require, exports, module) {
                 filter = {
 
                     '$and' : [{
-                        status: { '$ne' : 'complete'}
+                        status: { '$ne' : 'completed'}
                     },{
                         status: { '$ne' : 'canceled'}
                     },{
@@ -315,7 +315,7 @@ define(function(require, exports, module) {
                 };
                 break;
 
-            case 'complete':
+            case 'completed':
                 
                 // todos that are assigned that you know about
                 empty_string = 'No completed pickups';
@@ -421,7 +421,7 @@ define(function(require, exports, module) {
 
         // My
         this.filterTabs.IncompleteTodos = new Surface({
-            content: 'Incomplete',
+            content: 'In Progress',
             size: [100, undefined],
             classes: ['todo-filter-tabs-item-default']
         });
@@ -440,13 +440,13 @@ define(function(require, exports, module) {
 
         // Completed
         this.filterTabs.CompleteTodos = new Surface({
-            content: 'Complete',
+            content: 'Completed',
             size: [100, undefined],
             classes: ['todo-filter-tabs-item-default']
         });
         this.filterTabs.CompleteTodos.group = 'Todos';
         this.filterTabs.CompleteTodos.on('click', function(){
-            that.tabs.todos = 'complete';
+            that.tabs.todos = 'completed';
             that.tab_change();
             that.filterTabs.Views.forEach(function(tmpView){
                 if(tmpView.group == 'Todos'){
