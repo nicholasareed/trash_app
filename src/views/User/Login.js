@@ -118,7 +118,7 @@ define(function(require, exports, module) {
 
         this.form = new FormHelper({
             type: 'form',
-            scroll: true
+            scroll: false
         });
 
         // Add surfaces to content (buttons)
