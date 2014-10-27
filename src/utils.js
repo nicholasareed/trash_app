@@ -1215,187 +1215,39 @@ define(function (require) {
 
             switch(payload.type){
 
-                case 'new_connection':
-                    // Already on page?
-                    var viewUrl = 'user/' + payload.id;
-                    if(App.Cache.currentPageViewPath == viewUrl ){
-                        return;
-                    }
-                    Utils.Popover.Buttons({
-                        title: 'New Connection',
-                        buttons: [
-                            {
-                                text: 'View',
-                                success: function(){
-                                    App.history.navigate(viewUrl);
-                                }
-                            }
-                        ]
-                    });
+                case 'new_quote':
+                    Utils.Popoover.Alert('A new Quote is ready for you','Close Popoup');
+                    // // Already on page?
+                    // var viewUrl = 'user/' + payload.id;
+                    // if(App.Cache.currentPageViewPath == viewUrl ){
+                    //     return;
+                    // }
+                    // Utils.Popover.Buttons({
+                    //     title: 'New Connection',
+                    //     buttons: [
+                    //         {
+                    //             text: 'View',
+                    //             success: function(){
+                    //                 App.history.navigate(viewUrl);
+                    //             }
+                    //         }
+                    //     ]
+                    // });
                     
                     break;
 
 
-                case 'todo_updated':
-                    // Already on the page?
-                    var viewUrl = 'todo/' + payload.id;
-                    if(App.Cache.currentPageViewPath == viewUrl ){
-                        return;
-                    }
-                    Utils.Popover.Buttons({
-                        title: 'Job Details Updated',
-                        buttons: [
-                            {
-                                text: 'View',
-                                success: function(){
-                                    App.history.navigate(viewUrl);
-                                }
-                            }
-                        ]
-                    });
-                    
+                case 'new_submission':
+                    Utils.Popoover.Alert('New Submission','Close Popoup');
                     break;
 
-                case 'todo_assigned':
-                    // Already on the page?
-                    var viewUrl = 'todo/' + payload.id;
-                    if(App.Cache.currentPageViewPath == viewUrl ){
-                        return;
-                    }
-                    Utils.Popover.Buttons({
-                        title: 'Job people updated',
-                        buttons: [
-                            {
-                                text: 'View',
-                                success: function(){
-                                    App.history.navigate(viewUrl);
-                                }
-                            }
-                        ]
-                    });
-                    
+                case 'new_canceled':
+                    Utils.Popoover.Alert('New Cancelation','Close Popoup');
                     break;
 
-                case 'todo_content_added':
-                    // Already on the page?
-                    var viewUrl = 'todo/' + payload.id;
-                    if(App.Cache.currentPageViewPath == viewUrl ){
-                        return;
-                    }
-                    Utils.Popover.Buttons({
-                        title: 'New Job Content',
-                        buttons: [
-                            {
-                                text: 'View',
-                                success: function(){
-                                    App.history.navigate(viewUrl);
-                                }
-                            }
-                        ]
-                    });
-                    
-                    break;
 
-                case 'invoice_updated':
-                    // Already on the page?
-                    var viewUrl = 'invoice/' + payload.id;
-                    if(App.Cache.currentPageViewPath == viewUrl ){
-                        return;
-                    }
-                    Utils.Popover.Buttons({
-                        title: 'Invoice Details Updated',
-                        buttons: [
-                            {
-                                text: 'View',
-                                success: function(){
-                                    App.history.navigate(viewUrl);
-                                }
-                            }
-                        ]
-                    });
-                    
-                    break;
-
-                case 'invoice_assigned':
-                    // Already on the page?
-                    var viewUrl = 'invoice/' + payload.id;
-                    if(App.Cache.currentPageViewPath == viewUrl ){
-                        return;
-                    }
-                    Utils.Popover.Buttons({
-                        title: 'Invoice people updated',
-                        buttons: [
-                            {
-                                text: 'View',
-                                success: function(){
-                                    App.history.navigate(viewUrl);
-                                }
-                            }
-                        ]
-                    });
-                    
-                    break;
-
-                case 'invoice_item_added':
-                    // Already on the page?
-                    var viewUrl = 'invoice/' + payload.id;
-                    if(App.Cache.currentPageViewPath == viewUrl ){
-                        return;
-                    }
-                    Utils.Popover.Buttons({
-                        title: 'Item added to Invoice',
-                        buttons: [
-                            {
-                                text: 'View',
-                                success: function(){
-                                    App.history.navigate(viewUrl);
-                                }
-                            }
-                        ]
-                    });
-                    
-                    break;
-
-                case 'invoice_content_added':
-                    // Already on the page?
-                    var viewUrl = 'invoice/' + payload.id;
-                    if(App.Cache.currentPageViewPath == viewUrl ){
-                        return;
-                    }
-                    Utils.Popover.Buttons({
-                        title: 'New Invoice Content',
-                        buttons: [
-                            {
-                                text: 'View',
-                                success: function(){
-                                    App.history.navigate(viewUrl);
-                                }
-                            }
-                        ]
-                    });
-                    
-                    break;
-
-                case 'new_message_connected':
-                case 'new_message_unconnected':
-                    // Already on the page?
-                    var viewUrl = 'inbox/' + payload.from_user_id;
-                    if(App.Cache.currentPageViewPath == viewUrl ){
-                        return;
-                    }
-                    Utils.Popover.Buttons({
-                        title: 'New Message',
-                        text: payload.text,
-                        buttons: [
-                            {
-                                text: 'View',
-                                success: function(){
-                                    App.history.navigate(viewUrl);
-                                }
-                            }
-                        ]
-                    });
-                    
+                case 'new_candidate':
+                    Utils.Popoover.Alert('New Candidate','Close Popoup');
                     break;
 
 
