@@ -1216,7 +1216,7 @@ define(function (require) {
             switch(payload.type){
 
                 case 'new_quote':
-                    Utils.Popoover.Alert('A new Quote is ready for you','Close Popoup');
+                    Utils.Popover.Alert('A new Quote is ready for you','Close Popoup');
                     // // Already on page?
                     // var viewUrl = 'user/' + payload.id;
                     // if(App.Cache.currentPageViewPath == viewUrl ){
@@ -1238,16 +1238,16 @@ define(function (require) {
 
 
                 case 'new_submission':
-                    Utils.Popoover.Alert('New Submission','Close Popoup');
+                    Utils.Popover.Alert('New Submission','Close Popoup');
                     break;
 
                 case 'new_canceled':
-                    Utils.Popoover.Alert('New Cancelation','Close Popoup');
+                    Utils.Popover.Alert('New Cancelation','Close Popoup');
                     break;
 
 
                 case 'new_candidate':
-                    Utils.Popoover.Alert('New Candidate','Close Popoup');
+                    Utils.Popover.Alert('New Candidate','Close Popoup');
                     break;
 
 
