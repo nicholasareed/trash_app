@@ -430,6 +430,11 @@ define(function(require, exports, module) {
                     that.summary.media_id = response._id;
                 }
 
+                var stringifiedResponse = JSON.parse(response);
+                if(stringifiedResponse._id){
+                    that.summary.media_id = stringifiedResponse._id;
+                }
+
                 // // update collection
                 // Timer.setTimeout(function(){
                 //     that.model.fetch();
