@@ -416,25 +416,16 @@ define(function(require, exports, module) {
                 Utils.Notification.Toast('~30 seconds to process');
 
                 // r.responseCode
-                var response = r.response;
-
-                console.log(response);
-                console.error(r);
-                console.error(response);
-                console.error(JSON.stringify(response));
+                var response = JSON.parse(r.response);
 
                 // Expecting to get back a media_id that we'll use for uploading the Todo/Pickup
-                Utils.Notification.Toast(response);
 
                 if(response._id){
+                    Utils.Notification.Toast(response._id);
                     that.summary.media_id = response._id;
                 }
 
-                var stringifiedResponse = JSON.parse(response);
-                if(stringifiedResponse._id){
-                    Utils.Notification.Toast('it is stringified');
-                    that.summary.media_id = stringifiedResponse._id;
-                }
+
 
                 // // update collection
                 // Timer.setTimeout(function(){
