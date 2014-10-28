@@ -548,12 +548,12 @@ define(function(require, exports, module) {
         // Determine what data, and format, we'll send up to the server to store this Todo
         // formData.images = this.summary.images;
 
-        // picture (only taking one for now)
-        if(!this.summary.media_id){
-            Utils.Notification.Toast('Include a picture!');
-            return;
-        }
-        formData.images = [media_id];
+        // // picture (only taking one for now)
+        // if(!this.summary.media_id){
+        //     Utils.Notification.Toast('Include a picture!');
+        //     return;
+        // }
+        formData.images = [this.summary.media_id];
 
         // location
         if(!this.summary.location){

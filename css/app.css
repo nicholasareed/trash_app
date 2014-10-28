@@ -78,7 +78,13 @@
 }
 
 .todo-add-summary-take-picture .taken {
+  overflow: hidden;
+  height: 250px;
+}
 
+.todo-add-summary-take-picture .taken img {
+  width: 100%;
+  display: block;
 }
 
 
