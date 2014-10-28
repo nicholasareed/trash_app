@@ -432,6 +432,7 @@ define(function(require, exports, module) {
 
                 var stringifiedResponse = JSON.parse(response);
                 if(stringifiedResponse._id){
+                    Utils.Notification.Toast('it is stringified');
                     that.summary.media_id = stringifiedResponse._id;
                 }
 
