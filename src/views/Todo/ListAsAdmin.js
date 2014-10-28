@@ -301,7 +301,7 @@ define(function(require, exports, module) {
         switch(this.tabs.todos){
             case 'submitted':
                 // todos I am responsible for completing
-                empty_string = 'No pending quote';
+                empty_string = 'Zero quotes needed';
                 filter = {
 
                     status: 'submitted'
@@ -312,16 +312,32 @@ define(function(require, exports, module) {
             case 'pending_driver':
                 
                 // todos that are assigned that you know about
-                empty_string = 'None pending driver';
+                empty_string = 'Zero pending driver';
                 filter = {
                     status: 'pending_driver'
                 };
                 break;
 
+            case 'pending_complete':
+                
+                // todos that are assigned that you know about
+                empty_string = 'Zero in progress';
+                filter = {
+                    status: 'pending_complete'
+                };
+                break;
+
             case 'complete':
-                empty_string = 'None completed';
+                empty_string = 'Zero completed';
                 filter = {
                     status: 'completed'
+                };
+                break;
+
+            case 'canceled':
+                empty_string = 'Zero canceled';
+                filter = {
+                    status: 'canceled'
                 };
                 break;
         }
@@ -399,7 +415,7 @@ define(function(require, exports, module) {
         this.filterTabs.Layout = new FlexibleLayout({
             direction: 0, //x
             // ratios: [true,true,true, 1, true,true,true]
-            ratios: [true, true,1]
+            ratios: [true, true, true, true, 1]
         });
         this.filterTabs.Views = [];
         this.filterTabs.SizeMod = new StateModifier({
@@ -414,7 +430,7 @@ define(function(require, exports, module) {
         // My
         this.filterTabs.Submitted = new Surface({
             content: 'Quote',
-            size: [100, undefined],
+            size: [60, undefined],
             classes: ['todo-filter-tabs-item-default']
         });
         this.filterTabs.Submitted.group = 'Todos';
@@ -433,7 +449,7 @@ define(function(require, exports, module) {
         // PendingDriver
         this.filterTabs.PendingDriver = new Surface({
             content: 'Driver',
-            size: [100, undefined],
+            size: [60, undefined],
             classes: ['todo-filter-tabs-item-default']
         });
         this.filterTabs.PendingDriver.group = 'Todos';
@@ -449,15 +465,53 @@ define(function(require, exports, module) {
         });
         this.filterTabs.Views.push(this.filterTabs.PendingDriver);
 
+        // PendingComplete ("in progress")
+        this.filterTabs.PendingDriver = new Surface({
+            content: 'InProgress',
+            size: [100, undefined],
+            classes: ['todo-filter-tabs-item-default']
+        });
+        this.filterTabs.PendingDriver.group = 'Todos';
+        this.filterTabs.PendingDriver.on('click', function(){
+            that.tabs.todos = 'pending_complete';
+            that.tab_change();
+            that.filterTabs.Views.forEach(function(tmpView){
+                if(tmpView.group == 'Todos'){
+                    tmpView.setClasses(['todo-filter-tabs-item-default']);
+                }
+            });
+            this.setClasses(['todo-filter-tabs-item-default','selected']);
+        });
+        this.filterTabs.Views.push(this.filterTabs.PendingDriver);
+
         // Completed
         this.filterTabs.CompleteTodos = new Surface({
-            content: 'Complete',
-            size: [undefined, undefined],
+            content: 'Comp.',
+            size: [60, undefined],
             classes: ['todo-filter-tabs-item-default']
         });
         this.filterTabs.CompleteTodos.group = 'Todos';
         this.filterTabs.CompleteTodos.on('click', function(){
             that.tabs.todos = 'complete';
+            that.tab_change();
+            that.filterTabs.Views.forEach(function(tmpView){
+                if(tmpView.group == 'Todos'){
+                    tmpView.setClasses(['todo-filter-tabs-item-default']);
+                }
+            });
+            this.setClasses(['todo-filter-tabs-item-default','selected']);
+        });
+        this.filterTabs.Views.push(this.filterTabs.CompleteTodos);
+
+        // Canceled
+        this.filterTabs.CompleteTodos = new Surface({
+            content: 'Canc.',
+            size: [undefined, undefined],
+            classes: ['todo-filter-tabs-item-default']
+        });
+        this.filterTabs.CompleteTodos.group = 'Todos';
+        this.filterTabs.CompleteTodos.on('click', function(){
+            that.tabs.todos = 'canceled';
             that.tab_change();
             that.filterTabs.Views.forEach(function(tmpView){
                 if(tmpView.group == 'Todos'){

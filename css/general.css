@@ -155,7 +155,8 @@ body {
 
 .toggle-on {
   /*background: #2ecc71;*/
-  background: rgba(32,109,154, 1);
+  /*background: rgba(32,109,154, 1);*/
+  background: rgba(103, 172, 35, 1);
   color: white;
 }
 
@@ -577,7 +578,8 @@ iframe {
 /* Header */
 
 .header-bg-default {
-  background: rgba(32,109,154, 1);
+  /*background: rgba(32,109,154, 1);*/
+  background: rgba(103, 172, 35, 1);
   /*background: url('../img/zwartevilt.png') repeat;
   opacity: 0.5;*/
 }
@@ -898,7 +900,8 @@ input[type="submit"].form-button-submit-default {
   /*background: #3D5C99;*/
   /*background: #2980b9;*/
   /*background: #307A87;*/
-  background: #1D7BB4;
+  /*background: #1D7BB4;*/
+  background: #6FB926;
 
   border: 1px solid rgba(255,255,255,0.5);
   color: white;
@@ -940,7 +943,8 @@ input[type="submit"].form-button-submit-default.cancel-button {
   /*background: #2C3E50;*/
   /*background: #56799C;*/
   /*background: #33c5c3;*/
-  background: #1D7BB4;
+  /*background: #1D7BB4;*/
+  background: #6FB926;
 
   border-radius: 4px;
   -webkit-border-radius: 4px;

@@ -7,7 +7,8 @@
 
 
 .status-bar-default {
-  background: #206D9A;
+  /*background: #206D9A;*/
+  background: #67ac23;
   opacity: 0.7;
 }
 
@@ -527,7 +528,8 @@
   display: inline-block;
   width: 100%;
 
-  background: #1D7BB4;
+  /*background: #1D7BB4;*/
+  background: #6FB926;
   text-align: center;
 
   line-height: 40px;
