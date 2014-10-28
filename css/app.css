@@ -65,6 +65,62 @@
 }
 
 
+/* Creating new Todo */
+
+.todo-add-summary-take-picture {
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-add-summary-take-picture .not-taken {
+  text-align: center;
+  line-height: 250px;
+  font-size: 36px;
+}
+
+.todo-add-summary-take-picture .taken {
+
+}
+
+
+.todo-add-summary-location-default {
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-add-summary-location-default .no-location {
+  text-align: center;
+  line-height: 80px;
+  font-size: 28px;
+}
+
+.todo-add-summary-location-default .have-location {
+  text-align: center;
+  padding: 10px 8px;
+}
+
+
+.todo-add-summary-payment-default {
+}
+
+.todo-add-summary-payment-default .no-payment {
+  text-align: center;
+  line-height: 80px;
+  font-size: 28px;
+}
+
+.todo-add-summary-payment-default .have-payment {
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.todo-add-summary-payment-default .have-payment .name {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.todo-add-summary-payment-default .have-payment {
+  font-size: 16px;
+  line-height: 24px;
+}
 
 
 /* Invoice List - invoices */

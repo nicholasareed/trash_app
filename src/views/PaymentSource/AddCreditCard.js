@@ -335,7 +335,7 @@ define(function(require, exports, module) {
 
         console.log(creditCardData);
 
-         var card_save_name = $.trim(this.inputName.getValue().toString());
+         var card_save_name = $.trim(this.inputSaveName.getValue().toString());
          var card_last4 = creditCardData.number.substr(-4,4);
          card_save_name = card_save_name.length > 0 ? card_save_name : creditCardData.card_number.substr(-4,4); // saved name or last 4
 

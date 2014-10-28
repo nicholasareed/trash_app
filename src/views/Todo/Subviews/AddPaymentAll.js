@@ -207,6 +207,9 @@ define(function(require, exports, module) {
         };
         paymentView.Surface.pipe(that.contentLayout);
         paymentView.Surface.on('click', function(){
+
+            App.Cache.TodoAddPaymentOptions.on_choose(Model.toJSON());
+
             // App.history.navigate('user/' + Model.get('_id'));
         });
         paymentView.add(paymentView.Surface);

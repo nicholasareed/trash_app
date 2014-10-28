@@ -32,6 +32,13 @@ define(function(require, exports, module) {
     // Models
     var TodoModel = require('models/todo');
 
+    // Templates
+    var Handlebars          = require('lib2/handlebars-adapter');
+    var tpl_location        = require('text!./tpl/SummaryLocation.html');
+    var template_location   = Handlebars.compile(tpl_location);
+
+    var tpl_payment        = require('text!./tpl/SummaryPayment.html');
+    var template_payment   = Handlebars.compile(tpl_payment);
 
     function PageView(options) {
         var that = this;
@@ -79,9 +86,9 @@ define(function(require, exports, module) {
         this.headerContent = new View();
         // - done
         this.headerContent.Cancel = new Surface({
-            content: '<i class="icon ion-close-round"></i><div>Cancel</div>',
+            content: '<i class="icon ion-ios7-close-outline"></i>',
             size: [60, undefined],
-            classes: ['header-tab-icon-text']
+            classes: ['header-tab-icon-text-big']
         });
         this.headerContent.Cancel.on('click', function(){
             that.options.passed.on_cancel();
@@ -147,12 +154,75 @@ define(function(require, exports, module) {
 
     };
 
+    PageView.prototype.addSurfaces2 = function(){
+        var that = this;
+
+        // Build Surfaces
+
+        this.inputEmail = new FormHelper({
+
+            margins: [10,10],
+
+            form: this.form,
+            name: 'email',
+            placeholder: 'Email Address',
+            type: 'email',
+            value: ''
+        });
+
+        this.inputPassword = new FormHelper({
+
+            margins: [10,10],
+
+            form: this.form,
+            name: 'password',
+            placeholder: 'Password',
+            type: 'password',
+            value: ''
+        });
+
+        this.submitButton = new FormHelper({
+            form: this.form,
+            type: 'submit',
+            value: 'Login',
+            margins: [10,10],
+            click: this.login.bind(this)
+        });
+
+
+        // Forgot password
+        this.forgotPassword = new View();
+        this.forgotPassword.StateModifier = new StateModifier();
+        this.forgotPassword.Surface = new Surface({
+            content: 'Forgot your password? Reset Now',
+            size: [undefined, 80], 
+            classes: ['login-forgot-pass-button']
+        });
+        this.forgotPassword.Surface.pipe(this.form._formScrollView);
+        this.forgotPassword.Surface.on('click', function(){
+            App.history.navigate('forgot');
+        });
+        this.forgotPassword.add(this.forgotPassword.StateModifier).add(this.forgotPassword.Surface);
+
+
+        this.form.addInputsToForm([
+            this.inputEmail,
+            this.inputPassword,
+            this.submitButton,
+            this.forgotPassword
+        ]);
+
+    };
+
     PageView.prototype.addSurfaces = function() {
         var that = this;
 
         // Build Surfaces
         // - add to scrollView
-
+        var _holder = new Surface({size: [undefined,1]});
+        _holder.pipe(this.contentScrollView);
+        // need to create a 1px-height surface for the scrollview, otherwise it fucks up
+        this.contentScrollView.Views.push(_holder);
         
         this.createImageView();
     
@@ -195,8 +265,9 @@ define(function(require, exports, module) {
         // Submit button
         this.submitButtonSurface = new Surface({
             content: 'Create Pickup',
+            wrap: '<div class="outward-button">Create Pickup</div>',
             size: [undefined,60],
-            classes: ['form-button-submit-default']
+            classes: ['button-outwards-default']
         });
         this.submitButtonSurface.pipe(this.contentScrollView);
         this.contentScrollView.Views.push(this.submitButtonSurface);
@@ -216,7 +287,7 @@ define(function(require, exports, module) {
         // Images
         this.imagesView = new View();
         this.imagesView.Surface = new Surface({
-            content: '<div>Take Picture</div>',
+            content: '<div class="not-taken"><i class="icon ion-camera"></i></div>',
             size: [undefined, true],
             classes: ['todo-add-summary-take-picture']
         });
@@ -227,7 +298,7 @@ define(function(require, exports, module) {
             // Take picture
             Utils.takePicture('camera', {}, function(imageURI){
                 Timer.setTimeout(function(){
-                    that.imagesView.Surface.setContent('<img src="'+imageURI+'" />');
+                    that.imagesView.Surface.setContent('<div class="taken"><img src="'+imageURI+'" /></div>');
                 },1000);
                 that.upload_todo_image(imageURI);
             }, function(message){
@@ -252,9 +323,9 @@ define(function(require, exports, module) {
         // Location
         this.locationView = new View();
         this.locationView.Surface = new Surface({
-            content: '<div>Location</div>',
+            content: '',
             size: [undefined, true],
-            classes: ['todo-add-summary-topic-default','next-option']
+            classes: ['todo-add-summary-location-default']
         });
         this.locationView.Surface.pipe(this.contentScrollView);
         this.locationView.Surface.on('click', function(){
@@ -277,9 +348,9 @@ define(function(require, exports, module) {
         // payment method
         this.paymentView = new View();
         this.paymentView.Surface = new Surface({
-            content: '<div>Payment Method</div><div>&nbsp;</div>',
+            content: '',
             size: [undefined, true],
-            classes: ['todo-add-summary-topic-default','next-option']
+            classes: ['todo-add-summary-payment-default','next-option']
         });
         this.paymentView.Surface.on('click', function(){
             that.options.passed.on_choose('payment');
@@ -394,9 +465,16 @@ define(function(require, exports, module) {
 
         // Location
         if(this.summary.location){
-            this.locationView.Surface.setContent('<div>Location</div><div><span class="ellipsis-all">'+ this.summary.location.state + 'checkmark, done' +'</span></div>');
+            this.locationView.Surface.setContent(template_location(this.summary));
         } else {
-            this.locationView.Surface.setContent('<div>Location</div><div>...Enter Location</div>');
+            this.locationView.Surface.setContent('<div class="no-location"><i class="icon ion-android-location"></i></div>');
+        }
+
+        // Payment method
+        if(this.summary.payment){
+            this.paymentView.Surface.setContent(template_payment(this.summary));
+        } else {
+            this.paymentView.Surface.setContent('<div class="no-payment"><i class="icon ion-card"></i></div>');
         }
 
         // // Teams
@@ -468,9 +546,29 @@ define(function(require, exports, module) {
         var formData = {};
 
         // Determine what data, and format, we'll send up to the server to store this Todo
-        // formData.sport_id = this.summary.sport.get('_id');
-        formData.images = this.summary.images;
-        formData.address = this.summary.location;
+        // formData.images = this.summary.images;
+
+        // picture (only taking one for now)
+        if(!this.summary.media_id){
+            Utils.Notification.Toast('Include a picture!');
+            return;
+        }
+        formData.images = [media_id];
+
+        // location
+        if(!this.summary.location){
+            Utils.Notification.Toast('Include a location!');
+            return;
+        }
+        formData.address = this.summary.location; // using "address" instead of "location"
+
+        // payment
+        if(!this.summary.payment){
+            Utils.Notification.Toast('Include a payment method!');
+            return;
+        }
+        formData.payment_source_id = this.summary.payment._id;
+
 
         // Get elements to save
         this.model.set(formData);

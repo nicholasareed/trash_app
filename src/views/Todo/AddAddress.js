@@ -87,7 +87,7 @@ define(function(require, exports, module) {
 
         // create the header
         this.header = new StandardHeader({
-            content: "",
+            content: "Where is the trash?",
             classes: ["normal-header"],
             backClasses: ["normal-header"],
             // backContent: tru,
@@ -259,7 +259,7 @@ define(function(require, exports, module) {
         this.submitButton = new FormHelper({
             form: this.form,
             type: 'submit',
-            value: 'Save Address',
+            value: 'Use Address',
             margins: [10,10],
             click: this.save_address.bind(this)
         });
