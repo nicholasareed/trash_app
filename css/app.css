@@ -405,7 +405,18 @@
   padding: 0px 8px;
 }
 
-.todo-list-item-default > div:nth-child(1) {
+.todo-list-item-default .item-image {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.todo-list-item-default .item-image img {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ddd;
+}
+
+.todo-list-item-default .item-content > div:nth-child(1) {
 
   padding-top: 8px;
 
@@ -415,7 +426,7 @@
 }
 
 
-.todo-list-item-default > div:nth-child(2) {
+.todo-list-item-default .item-content > div:nth-child(2) {
   font-size: 14px;
   line-height: 20px;
   color: #333;
@@ -423,17 +434,17 @@
   padding-bottom: 16px;
 }
 
-.todo-list-item-default > div:nth-child(2) span.assigned {
+.todo-list-item-default .item-content > div:nth-child(2) span.assigned {
   padding-right: 8px;
   color: #2C3E50;
 }
 
-.todo-list-item-default > div:nth-child(2) span.invoiced {
+.todo-list-item-default .item-content > div:nth-child(2) span.invoiced {
   /*padding-right: 8px;*/
   color: green;
 }
 
-.todo-list-item-default > div:nth-child(2) span.owner {
+.todo-list-item-default .item-content > div:nth-child(2) span.owner {
   color: #7F8C8D;
 }
 
