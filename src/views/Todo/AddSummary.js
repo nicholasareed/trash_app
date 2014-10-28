@@ -422,6 +422,7 @@ define(function(require, exports, module) {
                 console.log(JSON.stringify(response));
 
                 // Expecting to get back a media_id that we'll use for uploading the Todo/Pickup
+                Utils.Notification.Toast(response._id);
                 if(response._id){
                     that.summary.media_id = response._id;
                 }
