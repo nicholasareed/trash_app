@@ -8,7 +8,7 @@
 
 .status-bar-default {
   /*background: #206D9A;*/
-  background: #8ba977;
+  background: #67ac23;
   opacity: 0.7;
 }
 
@@ -858,9 +858,10 @@
 /* Landing Page */
 
 .landing-page-bg-default {
-  background: url('../img/landingbg.png') no-repeat;
+  /*background: url('../img/landingbg.png') no-repeat;*/
   /*background: url('https://dl.dropboxusercontent.com/u/6673634/landingWelcome4%402x.png') no-repeat;*/
-  background-size: cover;
+  /*background-size: cover;*/
+  background: #8ba977;
 }
 
 .landing-page-logo-tagline {
