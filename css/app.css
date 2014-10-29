@@ -8,7 +8,7 @@
 
 .status-bar-default {
   /*background: #206D9A;*/
-  background: #67ac23;
+  background: #8ba977;
   opacity: 0.7;
 }
 
@@ -18,7 +18,7 @@
 /* Splash Screen */
 
 .splash-background-default {
-  background-color: #FFECB2;
+  background-color: #8ba977;
 }
 
 .splash-surface-default {
